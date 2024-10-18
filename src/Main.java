@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.time.LocalDateTime;
@@ -7,8 +8,10 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[] args) {
-        Lab3 lab = new Lab3();
-        lab.wypiszPodzbiory(new int[] {1, 2, 3, 4});
+        int[] arr = {1, 2, 3, 4, 15, 6, 7, 8, 9, 10, 11, 1, 1};
+        int[] arr2 = {1, 2, 1,1,1};
+//        Lab3.wypiszTablice(arr, 4, 4);
+        System.out.println(Lab3.ileUnikalnych(arr2));
     }
     
     /**
