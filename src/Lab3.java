@@ -237,7 +237,7 @@ public class Lab3 {
                 curMax = counter;
             }
             counter = 0;
-//            i++;
+            i++;
         }
         return curMax;
     }

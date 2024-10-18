@@ -10,8 +10,9 @@ public class Main {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 15, 6, 7, 8, 9, 10, 11, 1, 1};
         int[] arr2 = {1, 2, 1,1,1};
+        double[] arr3 = {1, 4, -4, 4, 5, 5, -3};
 //        Lab3.wypiszTablice(arr, 4, 4);
-        System.out.println(Lab3.ileUnikalnych(arr2));
+        System.out.println(Lab3.najdluzszyCiagDodatnich(arr3));
     }
     
     /**
