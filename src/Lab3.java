@@ -223,6 +223,25 @@ public class Lab3 {
         return Arrays.stream(tab).mapToInt(signum).toArray();
     }
 
+    // z6
+    public static int najdluzszyCiagDodatnich(double[] tab) {
+        int i = 0;
+        int counter = 0;
+        int curMax = 0;
+        while (i < tab.length) {
+            while (i < tab.length && tab[i] > 0) {
+                counter++;
+                i++;
+            }
+            if (counter > curMax) {
+                curMax = counter;
+            }
+            counter = 0;
+//            i++;
+        }
+        return curMax;
+    }
+
     // z7
     public static double[] generujZakres(int n, double minWartosc, double maxWartosc) {
         double diff = (maxWartosc - minWartosc) / (n - 1);
