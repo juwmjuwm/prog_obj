@@ -1,20 +1,31 @@
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.List;
+import java.util.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Scanner;
 
 public class Main {
     
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 15, 6, 7, 8, 9, 10, 11, 1, 1};
-        int[] arr2 = {1, 2, 1,1,1};
-        double[] arr3 = {1, 4, -4, 4, 5, 5, -3};
-//        Lab3.wypiszTablice(arr, 4, 4);
-        System.out.println(Lab3.najdluzszyCiagDodatnich(arr3));
+        int[] arr2 = {1, 2, 1, 4, 7};
+        int[] arr3 = {1, 4, -4, 9, 5};
+        ArrayList<Integer> list1 = new ArrayList<>(Arrays.stream(arr).boxed().toList());
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.stream(arr2).boxed().toList());
+        ArrayList<Integer> list3 = new ArrayList<>(Arrays.stream(arr3).boxed().toList());
+
+//        List<String> l = Zestaw5.toArrayList("gidosh").stream().map(String::valueOf).toList();
+//        var result = Zestaw5.checkChar(new ArrayList<>(l), 'd');
+//        System.out.println(result);
+
+        ArrayList<Integer> nums = Zestaw5.toArrayList(4457);
+        List<String> chars = Zestaw5.toArrayList("fefvsvf").stream().map(String::valueOf).toList();
+
+        ArrayList<ArrayList<Integer>> result = Zestaw5.uniqueArrayList(nums);
+        ArrayList<ArrayList<Object>> result2 = Zestaw5.uniqueArrayList2(new ArrayList<>(chars));
+        result.forEach(System.out::println);
+        System.out.println("***");
+        result2.forEach(System.out::println);
     }
-    
+
     /**
      * Contains solutions for Zestaw1.pdf
      */
