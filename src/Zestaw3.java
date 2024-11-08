@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.Function;
 
-public class Lab2 {
+public class Zestaw3 {
 
     /**
      * Task 1

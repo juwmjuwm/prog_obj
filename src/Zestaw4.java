@@ -1,10 +1,9 @@
 import java.util.Arrays;
 import java.util.Random;
 import java.util.function.DoubleToIntFunction;
-import java.util.function.Function;
 import java.util.stream.IntStream;
 
-public class Lab3 {
+public class Zestaw4 {
 
     // z1
     public static double[] generujTablice(int n, double minWartosc, double maxWartosc) {
