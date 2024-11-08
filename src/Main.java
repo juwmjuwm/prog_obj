@@ -3,27 +3,64 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 public class Main {
-    
+
+    private static void separate(int n) {
+        System.out.println("*".repeat(10));
+        System.out.printf("ZADANIE %d%n", n);
+        System.out.println("*".repeat(10));
+    }
+
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 15, 6, 7, 8, 9, 10, 11, 1, 1};
-        int[] arr2 = {1, 2, 1, 4, 7};
-        int[] arr3 = {1, 4, -4, 9, 5};
-        ArrayList<Integer> list1 = new ArrayList<>(Arrays.stream(arr).boxed().toList());
-        ArrayList<Integer> list2 = new ArrayList<>(Arrays.stream(arr2).boxed().toList());
-        ArrayList<Integer> list3 = new ArrayList<>(Arrays.stream(arr3).boxed().toList());
+        separate(1);
 
-//        List<String> l = Zestaw5.toArrayList("gidosh").stream().map(String::valueOf).toList();
-//        var result = Zestaw5.checkChar(new ArrayList<>(l), 'd');
-//        System.out.println(result);
+        System.out.println(Kolokwium1.dokladnosc(5.402, 5.4, 2));
+        System.out.println(Kolokwium1.dokladnosc(5.402, 5.4, 3));
+        System.out.println(Kolokwium1.dokladnosc(5.4, 5.402, 3));
 
-        ArrayList<Integer> nums = Zestaw5.toArrayList(4457);
-        List<String> chars = Zestaw5.toArrayList("fefvsvf").stream().map(String::valueOf).toList();
+        separate(2);
 
-        ArrayList<ArrayList<Integer>> result = Zestaw5.uniqueArrayList(nums);
-        ArrayList<ArrayList<Object>> result2 = Zestaw5.uniqueArrayList2(new ArrayList<>(chars));
-        result.forEach(System.out::println);
-        System.out.println("***");
-        result2.forEach(System.out::println);
+        System.out.println(Kolokwium1.najblizszySasiad(31));
+        System.out.println(Kolokwium1.najblizszySasiad(30));
+        System.out.println(Kolokwium1.najblizszySasiad(20));
+
+        separate(3);
+
+        System.out.println(Kolokwium1.pierwiastek(25, 2, 1));
+        System.out.println(Kolokwium1.pierwiastek(25, 2, 2));
+        System.out.println(Kolokwium1.pierwiastek(27, 3, 2));
+        System.out.println(Kolokwium1.pierwiastek(0.2, 2, 9));
+
+        separate(4);
+
+        int[] tab4_1 = {5, 1};
+        int[] tab4_2 = {5, 1, 0, 5, 7, 6, 3, 2, 6};
+        int[] tab4_3 = {5, 7};
+        System.out.println(Kolokwium1.podciag(tab4_1));
+        System.out.println(Kolokwium1.podciag(tab4_2));
+        System.out.println(Kolokwium1.podciag(tab4_3));
+
+        separate(5);
+
+        int[] tab5_1 = {5, 1, -3};
+        int[] tab5_2 = {5, 1, 0, 5, 7, 5, 3, 1, 6};
+        int[] tab5_3 = {5, 7};
+        System.out.println(Kolokwium1.podciag(tab5_1, 4));
+        System.out.println(Kolokwium1.podciag(tab5_2, 2));
+        System.out.println(Kolokwium1.podciag(tab5_3, 2));
+
+        separate(6);
+
+        System.out.println(Kolokwium1.czyPalindrom(4884));
+        System.out.println(Kolokwium1.czyPalindrom(14941));
+        System.out.println(Kolokwium1.czyPalindrom(7));
+        System.out.println(Kolokwium1.czyPalindrom(78));
+        System.out.println(Kolokwium1.czyPalindrom(922));
+        System.out.println(Kolokwium1.czyPalindrom(100));
+
+        separate(7);
+
+        Kolokwium1.palindromLiczbowy(1);
+        Kolokwium1.palindromLiczbowy(2);
     }
 
     /**
@@ -145,7 +182,8 @@ public class Main {
             }
         }
     }
-    
+
+
     /**
      * Contains solutions for Zestaw2.pdf
      */
