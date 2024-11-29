@@ -48,11 +48,12 @@ public class Zamowienie {
         return true;
     }
 
-    public void wyswietlZamowienie() {
-        System.out.println("***");
-        System.out.println("ZAMÓWIENIE:");
-        System.out.println("Status: " + status);
-        koszyk.wyswietlZawartoscKoszyka();
-        System.out.println("***");
+    @Override
+    public String toString() {
+        return "***" + "\n" +
+                "ZAMÓWIENIE:" + "\n" +
+                "Status: " + status + "\n" +
+                koszyk + "\n" +
+                "***" + "\n";
     }
 }

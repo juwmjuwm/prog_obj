@@ -27,6 +27,16 @@ public class Sklep {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Oferta sklepu:\n");
+        for (Produkt p : produkty) {
+            sb.append(p);
+        }
+        return sb.toString();
+    }
+
     public Optional<Produkt> wyszukajProdukt(String nazwa) {
         Produkt withName = new Produkt(nazwa, 0, 0);
         if (!produkty.contains(withName)) {

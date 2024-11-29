@@ -1,16 +1,37 @@
 package zestaw6;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class KoszykZakupowy {
 
     private Map<Produkt, Integer> products;
+    private String nazwaSklepu;
+    private LocalDate dataPowstania;
+    private Magazyn magazyn;
 
     public KoszykZakupowy() {
         products = new HashMap<>();
+        nazwaSklepu = "";
+        dataPowstania = LocalDate.now();
+        magazyn = new Magazyn(new ArrayList<>());
+    }
+
+    public KoszykZakupowy(
+            Map<Produkt, Integer> products,
+            String nazwaSklepu,
+            LocalDate dataPowstania,
+            Magazyn magazyn
+    ) {
+        if (dataPowstania.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException();
+        }
+        this.products = products;
+        this.nazwaSklepu = nazwaSklepu;
+        this.dataPowstania = dataPowstania;
+        this.magazyn = magazyn;
     }
 
     public Map<Produkt, Integer> getProducts() {
@@ -31,11 +52,14 @@ public class KoszykZakupowy {
         return true;
     }
 
-    public void wyswietlZawartoscKoszyka() {
-        System.out.println("Zawartość koszyka:");
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Zawartość koszyka:\n");
         for (Map.Entry<Produkt, Integer> e : products.entrySet()) {
-            System.out.printf("Nazwa produktu: %s | Ilość: %d%n", e.getKey().getNazwa(), e.getValue());
+            sb.append(String.format("Nazwa produktu: %s | Ilość: %d%n", e.getKey().getNazwa(), e.getValue()));
         }
+        return sb.toString();
     }
 
     public double obliczCalkowitaWartosc() {

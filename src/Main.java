@@ -1,5 +1,7 @@
 import zestaw6.*;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class Main {
         koszyk.dodajProdukt(piano, 3);
         koszyk.dodajProdukt(baklazan, 50);
         koszyk.dodajProdukt(piano, 100);
-        koszyk.wyswietlZawartoscKoszyka();
+        koszyk.toString();
 
         System.out.println(piano.getIloscNaMagazynie());
         System.out.println(baklazan.getIloscNaMagazynie());
@@ -28,7 +30,7 @@ public class Main {
 
         Zamowienie zamowienie = new Zamowienie(koszyk, OrderStatus.PLACED);
         zamowienie.ustawStatusZamowienia(OrderStatus.CONFIRMED);
-        zamowienie.wyswietlZamowienie();
+        zamowienie.toString();
 
         System.out.println("\nKLIENT");
 
@@ -38,7 +40,7 @@ public class Main {
         Klient klient = new Klient("Mark", "Pankov");
         klient.dodajZamowienie(zamowienie);
         klient.dodajZamowienie(zamowienie2);
-        klient.wyswietlHistorieZamowien();
+        klient.toString();
         System.out.println(klient.obliczLacznyKosztZamowien());
 
         System.out.println("\nSKLEP");
@@ -59,7 +61,10 @@ public class Main {
         System.out.printf("%s %s%n", zamowienie.getStatus(), zamowienie.getPlatnosc().getStatus());
         zamowienie.zwrocProdukt(baklazan, 30);
         zamowienie.zwrocProdukt(baklazan, 3000);
-        zamowienie.wyswietlZamowienie();
+        zamowienie.toString();
+
+        Magazyn magazyn = new Magazyn(List.of(jablko, baklazan));
+        System.out.println(magazyn);
     }
 
     private static void separate(int n) {

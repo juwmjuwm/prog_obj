@@ -56,12 +56,13 @@ public class Produkt {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Produkt produkt = (Produkt) o;
-        return Objects.equals(nazwa, produkt.nazwa);
+        return Double.compare(cena, produkt.cena) == 0 &&
+                Objects.equals(nazwa, produkt.nazwa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(nazwa);
+        return Objects.hash(nazwa, cena);
     }
 
     @Override
