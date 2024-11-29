@@ -18,6 +18,10 @@ public class Adres {
         this.numerMieszkania = numerMieszkania;
     }
 
+    public Adres(String miasto, String kodPocztowy, String ulica, int numerDomu) {
+        this(miasto, kodPocztowy, ulica, numerDomu, null);
+    }
+
     public String getMiasto() {
         return miasto;
     }
@@ -56,6 +60,9 @@ public class Adres {
     }
 
     public void setNumerDomu(int numerDomu) {
+        if (numerDomu < 1) {
+            throw new IllegalArgumentException();
+        }
         this.numerDomu = numerDomu;
     }
 
@@ -64,11 +71,10 @@ public class Adres {
     }
 
     public void setNumerMieszkania(int numerMieszkania) {
+        if (numerMieszkania < 1) {
+            throw new IllegalArgumentException();
+        }
         this.numerMieszkania = numerMieszkania;
-    }
-
-    public Adres(String miasto, String kodPocztowy, String ulica, int numerDomu) {
-        this(miasto, kodPocztowy, ulica, numerDomu, null);
     }
 
     @Override

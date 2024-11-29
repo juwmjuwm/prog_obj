@@ -26,7 +26,24 @@ public class Produkt {
         return iloscNaMagazynie;
     }
 
+    public void setNazwa(String nazwa) {
+        if (nazwa == null || nazwa.isBlank()) {
+            throw new IllegalArgumentException();
+        }
+        this.nazwa = nazwa;
+    }
+
+    public void setCena(double cena) {
+        if (cena < 0) {
+            throw new IllegalArgumentException();
+        }
+        this.cena = cena;
+    }
+
     public void setIloscNaMagazynie(int iloscNaMagazynie) {
+        if (iloscNaMagazynie < 0) {
+            throw new IllegalArgumentException();
+        }
         this.iloscNaMagazynie = iloscNaMagazynie;
     }
 

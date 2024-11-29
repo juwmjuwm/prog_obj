@@ -3,6 +3,7 @@ package zestaw6;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class Klient {
 
@@ -17,6 +18,7 @@ public class Klient {
         this.nazwisko = nazwisko;
         listaZamowien = new ArrayList<>();
         koszyk = new KoszykZakupowy();
+        adres = null;
     }
 
     public Klient(String imie, String nazwisko, Adres adres) {
@@ -28,8 +30,55 @@ public class Klient {
         return koszyk;
     }
 
-    public Adres getAdres() {
-        return adres;
+    public Optional<Adres> getAdres() {
+        return Optional.ofNullable(adres);
+    }
+
+    public String getImie() {
+        return imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public List<Zamowienie> getListaZamowien() {
+        return listaZamowien;
+    }
+
+    public void setImie(String imie) {
+        if (imie == null) {
+            throw new IllegalArgumentException();
+        }
+        this.imie = imie;
+    }
+
+    public void setNazwisko(String nazwisko) {
+        if (nazwisko == null) {
+            throw new IllegalArgumentException();
+        }
+        this.nazwisko = nazwisko;
+    }
+
+    public void setAdres(Adres adres) {
+        if (adres == null) {
+            throw new IllegalArgumentException();
+        }
+        this.adres = adres;
+    }
+
+    public void setListaZamowien(List<Zamowienie> listaZamowien) {
+        if (listaZamowien == null || listaZamowien.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        this.listaZamowien = listaZamowien;
+    }
+
+    public void setKoszyk(KoszykZakupowy koszyk) {
+        if (koszyk == null) {
+            throw new IllegalArgumentException();
+        }
+        this.koszyk = koszyk;
     }
 
     public void dodajZamowienie(Zamowienie zamowienie) {
@@ -59,7 +108,9 @@ public class Klient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Klient klient = (Klient) o;
-        return Objects.equals(imie, klient.imie) && Objects.equals(nazwisko, klient.nazwisko) && Objects.equals(adres, klient.adres);
+        return Objects.equals(imie, klient.imie) &&
+                Objects.equals(nazwisko, klient.nazwisko) &&
+                Objects.equals(adres, klient.adres);
     }
 
     @Override

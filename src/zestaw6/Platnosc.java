@@ -12,8 +12,26 @@ public class Platnosc {
         this.status = status;
     }
 
+    public double getValue() {
+        return value;
+    }
+
     public PaymentStatus getStatus() {
         return status;
+    }
+
+    public void setValue(double value) {
+        if (value < 0) {
+            throw new IllegalArgumentException();
+        }
+        this.value = value;
+    }
+
+    public void setStatus(PaymentStatus status) {
+        if (status == null) {
+            throw new IllegalArgumentException();
+        }
+        this.status = status;
     }
 
     public void zaplac() {
@@ -33,7 +51,8 @@ public class Platnosc {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Platnosc platnosc = (Platnosc) o;
-        return Double.compare(value, platnosc.value) == 0 && status == platnosc.status;
+        return Double.compare(value, platnosc.value) == 0 &&
+                status == platnosc.status;
     }
 
     @Override

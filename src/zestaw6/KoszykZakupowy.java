@@ -1,41 +1,29 @@
 package zestaw6;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class KoszykZakupowy {
 
     private Map<Produkt, Integer> products;
-    private String nazwaSklepu;
-    private LocalDate dataPowstania;
-    private Magazyn magazyn;
 
     public KoszykZakupowy() {
         products = new HashMap<>();
-        nazwaSklepu = "";
-        dataPowstania = LocalDate.now();
-        magazyn = new Magazyn(new ArrayList<>());
     }
 
-    public KoszykZakupowy(
-            Map<Produkt, Integer> products,
-            String nazwaSklepu,
-            LocalDate dataPowstania,
-            Magazyn magazyn
-    ) {
-        if (dataPowstania.isAfter(LocalDate.now())) {
-            throw new IllegalArgumentException();
-        }
+    public KoszykZakupowy(Map<Produkt, Integer> products) {
         this.products = products;
-        this.nazwaSklepu = nazwaSklepu;
-        this.dataPowstania = dataPowstania;
-        this.magazyn = magazyn;
     }
 
     public Map<Produkt, Integer> getProducts() {
         return products;
+    }
+
+    public void setProducts(Map<Produkt, Integer> products) {
+        if (products == null || products.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        this.products = products;
     }
 
     public boolean dodajProdukt(Produkt product, int count) {

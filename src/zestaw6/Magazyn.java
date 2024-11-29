@@ -10,6 +10,17 @@ public class Magazyn {
         this.produkty = produkty;
     }
 
+    public List<Produkt> getProdukty() {
+        return produkty;
+    }
+
+    public void setProdukty(List<Produkt> produkty) {
+        if (produkty == null || produkty.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        this.produkty = produkty;
+    }
+
     @Override
     public String toString() {
         return "Magazyn{" +
