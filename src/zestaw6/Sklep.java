@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Sklep {
+public class Sklep implements ISklep {
 
     private List<Produkt> produkty;
     private String nazwaSklepu;
@@ -81,6 +81,7 @@ public class Sklep {
 
     public void dodajProdukt(Produkt produkt) {
         produkty.add(produkt);
+        magazyn.getProdukty().add(produkt);
     }
 
     public void wyswietlOferty() {

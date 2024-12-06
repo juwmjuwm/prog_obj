@@ -44,10 +44,10 @@ public class Main {
         System.out.println(klient.obliczLacznyKosztZamowien());
 
         System.out.println("\nSKLEP");
-        Sklep sklep = new Sklep();
+        ISklep sklep = new Sklep();
         sklep.dodajProdukt(baklazan);
         sklep.dodajProdukt(jablko);
-        System.out.println(sklep.wyszukajProdukt("Jabłko").get().getNazwa());
+//        System.out.println(sklep.wyszukajProdukt("Jabłko").get().getNazwa());
         sklep.zakupy("Jabłko", klient);
         sklep.wyswietlOferty();
 
@@ -65,6 +65,16 @@ public class Main {
 
         Magazyn magazyn = new Magazyn(List.of(jablko, baklazan));
         System.out.println(magazyn);
+
+        // ZESTAW 8
+        Jablko szampion = new Jablko("jabłko szampion", 6.99, 678);
+        System.out.println(szampion);
+        Koszula koszula = new Koszula("koszula w kratę", 189.99, 129);
+        System.out.println(koszula);
+
+        sklep.dodajProdukt(szampion);
+        sklep.dodajProdukt(koszula);
+        sklep.wyswietlOferty();
     }
 
     private static void separate(int n) {

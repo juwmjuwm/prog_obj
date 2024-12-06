@@ -2,7 +2,7 @@ package zestaw6;
 
 import java.util.Optional;
 
-public class Adres {
+public class Adres implements IAdres {
 
     private String miasto;
     private String kodPocztowy;
@@ -10,7 +10,13 @@ public class Adres {
     private int numerDomu;
     private Integer numerMieszkania;
 
-    public Adres(String miasto, String kodPocztowy, String ulica, int numerDomu, Integer numerMieszkania) {
+    public Adres(
+            String miasto,
+            String kodPocztowy,
+            String ulica,
+            int numerDomu,
+            Integer numerMieszkania
+    ) {
         this.miasto = miasto;
         this.kodPocztowy = kodPocztowy;
         this.ulica = ulica;

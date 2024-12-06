@@ -2,7 +2,7 @@ package zestaw6;
 
 import java.util.Objects;
 
-public class Produkt {
+public class Produkt implements IProdukt {
 
     private String nazwa;
     private double cena;

@@ -2,7 +2,7 @@ package zestaw6;
 
 import java.util.Objects;
 
-public class Platnosc {
+public class Platnosc implements IPlatnosc {
 
     private double value;
     private PaymentStatus status;

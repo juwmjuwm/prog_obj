@@ -2,7 +2,7 @@ package zestaw6;
 
 import java.util.List;
 
-public class Magazyn {
+public class Magazyn implements IMagazyn {
 
     private List<Produkt> produkty;
 

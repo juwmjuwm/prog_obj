@@ -3,7 +3,7 @@ package zestaw6;
 import java.util.HashMap;
 import java.util.Map;
 
-public class KoszykZakupowy {
+public class KoszykZakupowy implements IKoszykZakupowy {
 
     private Map<Produkt, Integer> products;
 

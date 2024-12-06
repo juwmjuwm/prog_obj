@@ -1,6 +1,6 @@
 package zestaw6;
 
-public class Zamowienie {
+public class Zamowienie implements IZamowienie {
 
     private KoszykZakupowy koszyk;
     private OrderStatus status;

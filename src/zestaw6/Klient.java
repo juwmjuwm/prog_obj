@@ -5,17 +5,14 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class Klient {
+public class Klient extends Osoba implements IKlient {
 
-    private String imie;
-    private String nazwisko;
     private Adres adres;
     private List<Zamowienie> listaZamowien;
     private KoszykZakupowy koszyk;
 
     public Klient(String imie, String nazwisko) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
+        super(imie, nazwisko);
         listaZamowien = new ArrayList<>();
         koszyk = new KoszykZakupowy();
         adres = null;
@@ -34,30 +31,8 @@ public class Klient {
         return Optional.ofNullable(adres);
     }
 
-    public String getImie() {
-        return imie;
-    }
-
-    public String getNazwisko() {
-        return nazwisko;
-    }
-
     public List<Zamowienie> getListaZamowien() {
         return listaZamowien;
-    }
-
-    public void setImie(String imie) {
-        if (imie == null) {
-            throw new IllegalArgumentException();
-        }
-        this.imie = imie;
-    }
-
-    public void setNazwisko(String nazwisko) {
-        if (nazwisko == null) {
-            throw new IllegalArgumentException();
-        }
-        this.nazwisko = nazwisko;
     }
 
     public void setAdres(Adres adres) {
@@ -108,13 +83,13 @@ public class Klient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Klient klient = (Klient) o;
-        return Objects.equals(imie, klient.imie) &&
-                Objects.equals(nazwisko, klient.nazwisko) &&
+        return Objects.equals(getImie(), klient.getImie()) &&
+                Objects.equals(getNazwisko(), klient.getNazwisko()) &&
                 Objects.equals(adres, klient.adres);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imie, nazwisko, adres);
+        return Objects.hash(getImie(), getNazwisko(), adres);
     }
 }
